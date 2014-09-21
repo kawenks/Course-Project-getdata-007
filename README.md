@@ -1,4 +1,4 @@
-Train\_Test\_Measures.txt" & run_analysis.R
+Train\_Test\_Measures.txt & run_analysis.R
 ===================================================
 
 **Last Revision: 21 September 2014
