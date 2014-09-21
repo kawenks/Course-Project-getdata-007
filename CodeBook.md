@@ -17,6 +17,8 @@
     * dplyr
     * reshape2
 
+See the README and references to [Human Activity Recognition Using Smartphones Dataset version 1.0](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones) for more information on the source data 
+
 ### Resulting Columns are:
 | columns | description | data type & conversion |example data |
 | --------|-------------|-----------|-------------|
