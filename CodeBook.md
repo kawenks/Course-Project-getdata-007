@@ -37,18 +37,17 @@ So x.train - is the x columns with 561 features, coming from the training data s
 
 
 Step 2: Merge via ***Row-bind*** each all like data sets
-    maintaining the sequence 
-    across the merge  with 1st-train, 2nd-test
-    for all data sets
+
+maintaining the sequence 
+across the merge  with 1st-train, 2nd-test
+for all data sets
 
 
    merge x, y and subjects by rbind
    
-   ```x.both <- rbind(x.train,x.test)
-   
-   y.both <- rbind(y.train,y.test)
-   
-   subject.both <- rbind(subject.train,subject.test)```
+    x.both <- rbind(x.train,x.test)
+    y.both <- rbind(y.train,y.test)
+    subject.both <- rbind(subject.train,subject.test)
 
 Step 3: - Name all columns with descriptive labels
 _*Requirement #4 - Uses descriptive activity names to name the activities in the data set*_
