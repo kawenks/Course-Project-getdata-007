@@ -27,8 +27,8 @@ The script sequence is as follows:
     8. Calculate the mean of the values for each Subject, Activity and Measure (variable)
     
 
-Note on Tidy Data:
-------------------
+Tidy Data Statement
+-------------------
 
 The Train_Test_Measures.txt data is organized into 4 columns with a column each for variables and numeric values. The variables can be further refined to suit a data analysts requirements. 
 
@@ -62,6 +62,15 @@ The script must be in same folder as the source data folders. The script expects
     .\activity_labels.txt
     .\features.txt
     
+
+Files included in this project
+------------------------------
+
+run_analysis.R - script to extract and convert the Smartphones measures into a tidy data set
+
+CodeBook.md - explains the resulting data set variables and the sequence of steps and conversions towards the result.
+
+README.md - This readme. Explains the requirements, tidy data statement, acknowledgements, etc.
 
 ---
 Acknowledgements:
