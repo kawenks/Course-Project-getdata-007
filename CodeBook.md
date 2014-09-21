@@ -28,20 +28,15 @@
   
 ###Code Sequence
 
-Step 1:
+Step 1: Load train, test and reference data. Variable name coding is based on <column type>.<data set>.
 
-Load train, test and reference data. Variable name coding is based on <column type>.<data set>.
-
-So x.train - is the x columns with 561 features, coming from the training data set. x.test will come from the test data set.
+>So x.train - is the x columns with 561 features, coming from the training data set. x.test will come from the test data set.
 
 
 
 Step 2: Merge via _*Row-bind*_ each all like data sets
 
-maintaining the sequence 
-across the merge  with 1st-train, 2nd-test
-for all data sets
-
+>maintaining the sequence across the merge  with 1st-train, 2nd-test for all data sets
 
    merge x, y and subjects by rbind
    
@@ -53,29 +48,32 @@ Step 3: - Name all columns with descriptive labels
 
 ***Requirement #4 - Uses descriptive activity names to name the activities in the data set***
 
-make column label descriptive
-
+    
     names(subject.both)    <- c("subject")
     names(y.both)          <- c("activity.id")
     names(activity.labels) <- c("activity.id","activity")
+    
 
 convert numeric ids to factor -- handy for tidying later
     subject.both$subject        <- factor(subject.both$subject)<p>
     y.both$activity.id          <- factor(y.both$activity.id)<p>
     activity.labels$activity.id <- factor(activity.labels$activity.id)
-
+    
+    
 assign descriptive variable names to the x data set
 
+    
     names(x.both) <- as.vector(features[,2])
     
-   
+
 Step 4: Extract only mean & stdev measures
 
 ***Requirement #2 - Extract only the measurements on the mean and standard deviation for each measurement.***
- 
+
+     
     x.selectfields <- x.both[,c(grep("mean|std",names(x.both)))]
      
-   
+
 Step 5: _*Column-bind*_ all data sets
  
 *** Requirement #1: Merges the training and the test sets to create one data set.***
