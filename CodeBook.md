@@ -41,13 +41,16 @@ Step 2: Merge via ***Row-bind*** each all like data sets
 
 
    merge x
-   `x.both <- rbind(x.train,x.test)
+   
+   >x.both <- rbind(x.train,x.test)
 
    merge y
-   `y.both <- rbind(y.train,y.test)
+   
+   >y.both <- rbind(y.train,y.test)
 
    merge subjects
-   `subject.both <- rbind(subject.train,subject.test)
+   
+   >subject.both <- rbind(subject.train,subject.test)
 
 Step 3: - Name all columns with descriptive labels
 _*Requirement #4 - Uses descriptive activity names to name the activities in the data set*_
