@@ -55,10 +55,12 @@ Step 3: - Name all columns with descriptive labels
     
 
 convert numeric ids to factor -- handy for tidying later
+    
     subject.both$subject        <- factor(subject.both$subject)<p>
     y.both$activity.id          <- factor(y.both$activity.id)<p>
     activity.labels$activity.id <- factor(activity.labels$activity.id)
     
+      
     
 assign descriptive variable names to the x data set
 
