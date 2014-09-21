@@ -51,13 +51,13 @@ for all data sets
 
 Step 3: - Name all columns with descriptive labels
 
-****Requirement #4 - Uses descriptive activity names to name the activities in the data set****
+***Requirement #4 - Uses descriptive activity names to name the activities in the data set***
 
 make column label descriptive
 
     names(subject.both)    <- c("subject")
     names(y.both)          <- c("activity.id")
-    names(activity.labels) <- c("activity.id","activity")```
+    names(activity.labels) <- c("activity.id","activity")
 
 convert numeric ids to factor -- handy for tidying later
     subject.both$subject        <- factor(subject.both$subject)<p>
@@ -71,17 +71,19 @@ assign descriptive variable names to the x data set
    
 Step 4: Extract only mean & stdev measures
 
-***Requirement #2 - Extract only the measurements on the mean and standard deviation for each measurement.****
+***Requirement #2 - Extract only the measurements on the mean and standard deviation for each measurement.***
  
     x.selectfields <- x.both[,c(grep("mean|std",names(x.both)))]
      
    
 Step 5: _*Column-bind*_ all data sets
+ 
+*** Requirement #1: Merges the training and the test sets to create one data set.***
     
     data.merged <- cbind(subject.both,y.both,x.selectfields)
     
    
-****Requirement #3: Uses descriptive activity names to name the activities in the data set****
+***Requirement #3: Uses descriptive activity names to name the activities in the data set***
 
 attach activity labels "walking", "sitting", etc..
     
@@ -89,7 +91,7 @@ attach activity labels "walking", "sitting", etc..
     
 
 
-****Requirement #5 - create a secondary, independent tidy data set with the average of each variable for each activity and each subject****
+***Requirement #5 - create a secondary, independent tidy data set with the average of each variable for each activity and each subject***
 
 Note: Requirement 5 also has multiple steps
 
