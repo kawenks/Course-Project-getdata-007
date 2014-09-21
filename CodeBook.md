@@ -32,6 +32,22 @@ Step 1: Load train, test and reference data. Variable name coding is based on <c
 
 >So x.train - is the x columns with 561 features, coming from the training data set. x.test will come from the test data set.
 
+Load Training set
+    
+    x.train <- read.table('./train/X_train.txt',header=FALSE, strip.white=TRUE)
+    y.train <- read.table('./train/y_train.txt')
+    subject.train <- read.table('./train/subject_train.txt')
+    
+Load Test set
+    
+    x.test <- read.table('./test/X_test.txt',header=FALSE, strip.white=TRUE)
+    y.test <- read.table('./test/y_test.txt',header=FALSE, strip.white=TRUE)
+    subject.test <- read.table('./test/subject_test.txt',header=FALSE, strip.white=TRUE)
+
+Load References
+
+    features <- read.table('./features.txt',header=FALSE, strip.white=TRUE)
+    activity.labels <- read.table('./activity_labels.txt',header=FALSE, strip.white=TRUE)
 
 
 Step 2: Merge via _*Row-bind*_ each all like data sets
