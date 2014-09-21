@@ -39,63 +39,64 @@ Step 2: Merge via ***Row-bind*** each all like data sets
     across the merge  with 1st-train, 2nd-test
     for all data sets
 
-merge x.****
-`x.both <- rbind(x.train,x.test)
 
-merge y.****
-`y.both <- rbind(y.train,y.test)
+   merge x
+   `x.both <- rbind(x.train,x.test)
 
-merge subjects
-`subject.both <- rbind(subject.train,subject.test)
+   merge y
+   `y.both <- rbind(y.train,y.test)
+
+   merge subjects
+   `subject.both <- rbind(subject.train,subject.test)
 
 Step 3: - Name all columns with descriptive labels
 _*Requirement #4 - Uses descriptive activity names to name the activities in the data set*_
 
 make column label descriptive
-`names(subject.both)    <- c("subject")
-`names(y.both)          <- c("activity.id")
-`names(activity.labels) <- c("activity.id","activity")
+   `names(subject.both)    <- c("subject")
+   `names(y.both)          <- c("activity.id")
+   `names(activity.labels) <- c("activity.id","activity")
 
-convert numeric id's to factor -- handy for tidying later
-`subject.both$subject        <- factor(subject.both$subject)
-`y.both$activity.id          <- factor(y.both$activity.id)
-`activity.labels$activity.id <- factor(activity.labels$activity.id)
+convert numeric ids to factor -- handy for tidying later
+   `subject.both$subject        <- factor(subject.both$subject)
+   `y.both$activity.id          <- factor(y.both$activity.id)
+   `activity.labels$activity.id <- factor(activity.labels$activity.id)
 
 assign descriptive variable names to the x data set
-`names(x.both) <- as.vector(features[,2])
+   `names(x.both) <- as.vector(features[,2])
 
 Step 4: Extract only mean & stdev measures
 _*Requirement #2 - Extract only the measurements on the mean and standard deviation for each measurement.*_
 
-`x.selectfields <- x.both[,c(grep("mean|std",names(x.both)))]
+   `x.selectfields <- x.both[,c(grep("mean|std",names(x.both)))]
 
 Step 5: Column-bind all data sets
-data.merged <- cbind(subject.both,y.both,x.selectfields)
+   `data.merged <- cbind(subject.both,y.both,x.selectfields)
 
 _*Requirement #3: Uses descriptive activity names to name the activities in the data set*_
 attach activity labels "walking", "sitting", etc..
-`data.final <- merge(data.merged,activity.labels, by.x="activity.id", by.y="activity.id")
+   `data.final <- merge(data.merged,activity.labels, by.x="activity.id", by.y="activity.id")
 
 
 _*Requirement #5 - create a secondary, independent tidy data set with the average of each variable for each activity and each subject*_
 
 Step 1: convert to data table for dplyr
-`data.dplyr <- tbl_df(data.final)
+   `data.dplyr <- tbl_df(data.final)
 
 Step 2: remove now redundant activity.id column
-`data.dplyr <- select(data.dplyr, -activity.id)
+   `data.dplyr <- select(data.dplyr, -activity.id)
 
 Step 3: Reduce the 79 mean & stdev columns into variable and value columns 
 variable holds the column label 
 and value holds the measure for each variable, subject & activity
-`data.melt <- melt(data.dplyr,id=c("subject","activity"))
+   `data.melt <- melt(data.dplyr,id=c("subject","activity"))
 
 Step 4: create the secondary, independent data set by grouping according to subject, activity & variable, then summarize by calculating mean of each field.
-`data.secondary <- data.melt %>% 
-                  group_by(subject,activity,variable) %>% 
-                  summarise(variable_mean=mean(value))
+   `data.secondary <- data.melt %>% 
+                  `group_by(subject,activity,variable) %>% 
+                  `summarise(variable_mean=mean(value))
 
 output the data to a file
-`write.table(data.secondary,"Train_Test_Measures.txt",sep=",", row.names=FALSE)
+   `write.table(data.secondary,"Train_Test_Measures.txt",sep=",", row.names=FALSE)
 
 done.
