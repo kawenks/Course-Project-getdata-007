@@ -66,13 +66,13 @@ The script must be in same folder as the source data folders. The script expects
 ---
 Acknowledgements:
 ---------------------------------------------
-Source data for this project is from:
-    Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
-    Smartlab - Non Linear Complex Systems Laboratory
-    DITEN - Università degli Studi di Genova.
-    Via Opera Pia 11A, I-16145, Genoa, Italy.
-    activityrecognition@smartlab.ws
-    www.smartlab.ws
+Source data for this project is from:<p>
+>Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+>Smartlab - Non Linear Complex Systems Laboratory
+>DITEN - Università degli Studi di Genova.
+>Via Opera Pia 11A, I-16145, Genoa, Italy.
+>activityrecognition@smartlab.ws
+>www.smartlab.ws
 
 from their data set collection titled:
 
