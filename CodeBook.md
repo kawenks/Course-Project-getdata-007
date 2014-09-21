@@ -44,22 +44,22 @@ Step 2: Merge via ***Row-bind*** each all like data sets
 
    merge x, y and subjects by rbind
    
-   ```x.both <- rbind(x.train,x.test)
-   y.both <- rbind(y.train,y.test)
+   ```x.both <- rbind(x.train,x.test)<p>
+   y.both <- rbind(y.train,y.test)<p>
    subject.both <- rbind(subject.train,subject.test)```
 
 Step 3: - Name all columns with descriptive labels
 _*Requirement #4 - Uses descriptive activity names to name the activities in the data set*_
 
 make column label descriptive
-   ```names(subject.both)    <- c("subject")
-   names(y.both)          <- c("activity.id")
+   ```names(subject.both)    <- c("subject")<p>
+   names(y.both)          <- c("activity.id")<p>
    names(activity.labels) <- c("activity.id","activity")```
 
 convert numeric ids to factor -- handy for tidying later
-   >subject.both$subject        <- factor(subject.both$subject)
-   >y.both$activity.id          <- factor(y.both$activity.id)
-   >activity.labels$activity.id <- factor(activity.labels$activity.id)
+   '''subject.both$subject        <- factor(subject.both$subject)<p>
+   y.both$activity.id          <- factor(y.both$activity.id)<p>
+   activity.labels$activity.id <- factor(activity.labels$activity.id)'''
 
 assign descriptive variable names to the x data set
    >
