@@ -76,12 +76,12 @@ Source data for this project is from:<p>
 
 from their data set collection titled:
 
-    [Human Activity Recognition Using Smartphones Dataset](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
-    Version 1.0
+[Human Activity Recognition Using Smartphones Dataset version 1.0](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 .. which is available at 
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+
 ---
 
 Thank you to Jeff Leek,PhD instructor of the Getting and Cleaning Data, all the community TA's and fellow students for the lessons, tips and insights that made this project possible.
