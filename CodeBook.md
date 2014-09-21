@@ -36,7 +36,7 @@ So x.train - is the x columns with 561 features, coming from the training data s
 
 
 
-Step 2: Merge via ***Row-bind*** each all like data sets
+Step 2: Merge via _*Row-bind*_ each all like data sets
 
 maintaining the sequence 
 across the merge  with 1st-train, 2nd-test
@@ -50,7 +50,8 @@ for all data sets
     subject.both <- rbind(subject.train,subject.test)
 
 Step 3: - Name all columns with descriptive labels
-_*Requirement #4 - Uses descriptive activity names to name the activities in the data set*_
+
+****Requirement #4 - Uses descriptive activity names to name the activities in the data set****
 
 make column label descriptive
 
@@ -61,7 +62,7 @@ make column label descriptive
 convert numeric ids to factor -- handy for tidying later
     subject.both$subject        <- factor(subject.both$subject)<p>
     y.both$activity.id          <- factor(y.both$activity.id)<p>
-    activity.labels$activity.id <- factor(activity.labels$activity.id)'''
+    activity.labels$activity.id <- factor(activity.labels$activity.id)
 
 assign descriptive variable names to the x data set
 
@@ -69,24 +70,27 @@ assign descriptive variable names to the x data set
     
    
 Step 4: Extract only mean & stdev measures
-_*Requirement #2 - Extract only the measurements on the mean and standard deviation for each measurement.*_
+
+***Requirement #2 - Extract only the measurements on the mean and standard deviation for each measurement.****
  
     x.selectfields <- x.both[,c(grep("mean|std",names(x.both)))]
      
    
-Step 5: Column-bind all data sets
+Step 5: _*Column-bind*_ all data sets
     
     data.merged <- cbind(subject.both,y.both,x.selectfields)
     
    
-_*Requirement #3: Uses descriptive activity names to name the activities in the data set*_
+****Requirement #3: Uses descriptive activity names to name the activities in the data set****
+
 attach activity labels "walking", "sitting", etc..
     
     data.final <- merge(data.merged,activity.labels, by.x="activity.id", by.y="activity.id")
     
 
 
-_*Requirement #5 - create a secondary, independent tidy data set with the average of each variable for each activity and each subject*_
+****Requirement #5 - create a secondary, independent tidy data set with the average of each variable for each activity and each subject****
+
 Note: Requirement 5 also has multiple steps
 
 Step 1: convert to data table for dplyr
@@ -100,8 +104,7 @@ Step 2: remove now redundant activity.id column
     
 
 Step 3: Reduce the 79 mean & stdev columns into variable and value columns 
-variable holds the column label 
-and value holds the measure for each variable, subject & activity
+variable holds the column label and value holds the measure for each variable, subject & activity
     
     data.melt <- melt(data.dplyr,id=c("subject","activity"))
     
