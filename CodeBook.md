@@ -78,7 +78,7 @@ Step 4: Extract only mean & stdev measures
 
 Step 5: _*Column-bind*_ all data sets
  
-*** Requirement #1: Merges the training and the test sets to create one data set.***
+***Requirement #1: Merges the training and the test sets to create one data set.***
     
     data.merged <- cbind(subject.both,y.both,x.selectfields)
     
