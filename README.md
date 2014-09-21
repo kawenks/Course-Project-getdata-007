@@ -1,8 +1,9 @@
-ReadMe for Train_Test_Measures.txt & run_analysis.R
+Train\_Test\_Measures.txt" & run_analysis.R
 ===================================================
-Last Revision: 21 September 2014
-by Allan Cuenca (allan.cuenca@yahoo.com)
----------------------------------------------------
+
+**Last Revision: 21 September 2014
+**by Allan Cuenca (allan.cuenca@yahoo.com)
+
 
 This is a course work towards the completion of requirements under 
 the Getting and Cleaning Data course at Coursera.org,
@@ -63,19 +64,20 @@ The script must be in same folder as the source data folders. The script expects
     
 
 ---
-Source data this project is from the work of:
-
-Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
-Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Università degli Studi di Genova.
-Via Opera Pia 11A, I-16145, Genoa, Italy.
-activityrecognition@smartlab.ws
-www.smartlab.ws
+Acknowledgements:
+---------------------------------------------
+Source data for this project is from:
+    Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+    Smartlab - Non Linear Complex Systems Laboratory
+    DITEN - Università degli Studi di Genova.
+    Via Opera Pia 11A, I-16145, Genoa, Italy.
+    activityrecognition@smartlab.ws
+    www.smartlab.ws
 
 from their data set collection titled:
 
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
+    [Human Activity Recognition Using Smartphones Dataset](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+    Version 1.0
 
 .. which is available at 
 
