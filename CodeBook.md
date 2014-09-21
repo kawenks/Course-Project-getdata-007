@@ -18,12 +18,12 @@
     * reshape2
 
 ### Resulting Columns are:
-| columns | description | example data |
-| --------|-------------|--------------|
-| subject | experiment participant's ID. Range 1-30 | 1, 2, 3 .. 30|
-| activity | description of the activity that the participant engaged in.| LAYING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING |
-| variable | names of the measures applied to the subject's activity. includes only the mean and standard deviation measures from the original data set. | tBodyAccMag-mean(), tBodyAcc-mean()-X|
-| variable_mean | mean of the measures value as per grouping of subject, activity and variable |  0.221598244, -0.040513953 |
+| columns | description | data type & conversion |example data |
+| --------|-------------|-----------|-------------|
+| subject | experiment participant's ID. Range 1-30 | numeric - converted to string factor|1, 2, 3 .. 30|
+| activity | description of the activity that the participant engaged in.| string/character |LAYING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING |
+| variable | names of the measures applied to the subject's activity. includes only the mean and standard deviation measures from the original data set.| string - transposed from column header label to row factor| tBodyAccMag-mean(), tBodyAcc-mean()-X|
+| variable_mean | mean of the measures value as per grouping of subject, activity and variable| numeric - transposed from multiple columns to value, applied mean per subject, activity & variable |  0.221598244, -0.040513953 |
 
   
 ###Code Sequence
@@ -56,8 +56,8 @@ Step 3: - Name all columns with descriptive labels
 
 convert numeric ids to factor -- handy for tidying later
     
-    subject.both$subject        <- factor(subject.both$subject)<p>
-    y.both$activity.id          <- factor(y.both$activity.id)<p>
+    subject.both$subject        <- factor(subject.both$subject)
+    y.both$activity.id          <- factor(y.both$activity.id)
     activity.labels$activity.id <- factor(activity.labels$activity.id)
     
       
